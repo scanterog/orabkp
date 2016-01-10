@@ -150,7 +150,9 @@ echo "[`date`]: (BEGIN) - Oracle Database Backup (orabkp) starting with config f
 
 load_config_file $1
 
-PATH=$PATH:$ORACLE_HOME/bin
+export PATH=$PATH:$ORACLE_HOME/bin
+export ORACLE_HOME=$ORACLE_HOME
+export ORACLE_SID=$ORACLE_SID
 ORA_DUMPFILE=$(date +%d-%b-%Y_%I-%M)-$BACKUP_NAME-$HOSTNAME-$BACKUP_ENV.dmp
 ORA_LOGFILE=$(date +%d-%b-%Y_%I-%M)-$BACKUP_NAME-$HOSTNAME-$BACKUP_ENV.log
 
